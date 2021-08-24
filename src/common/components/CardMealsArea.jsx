@@ -5,6 +5,7 @@ import { AREA_SELECTED, fetchAPI, MEALS } from '../../services/index';
 import store, { setFetchOnDone } from '../../context/store';
 
 export default function CardMealsArea({ datacard }) {
+  const [fetch, setFetch] = useState(true);
   const [dataOrigin, setDataOrigin] = useState('');
   const { recipes: { cardsLimit }, setRecipes } = useContext(store);
 
@@ -12,22 +13,24 @@ export default function CardMealsArea({ datacard }) {
     if (datacard === 'All') {
       const mealsArea = await fetchAPI(MEALS);
       setDataOrigin(mealsArea.meals);
+      setFetch(false);
     } else {
       const mealsArea = await fetchAPI(`${AREA_SELECTED}${datacard}`);
       setDataOrigin(mealsArea.meals);
+      setFetch(false);
     }
   }
-  useEffect(() => {
-    getAreaMeals();
-  }, []);
-
-  useEffect(() => {
-    getAreaMeals();
-  }, [datacard]);
 
   const handleClick = () => {
     setRecipes(setFetchOnDone(true));
   };
+
+  // Lifecycle --------------------------------------------------------
+
+  useEffect(() => { setFetch(true); }, []);
+  useEffect(() => { if (fetch) { getAreaMeals(); } });
+
+  //-------------------------------------------------------------------
 
   return (
     dataOrigin

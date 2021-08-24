@@ -10,16 +10,22 @@ export default function MealsOrigem() {
   const [dataArea, setDataArea] = useState([]);
   const [datacard, setDatacard] = useState('All');
 
-  useEffect(() => {
+  const getRecipes = () => {
     fetchAPI(AREA_MEALS)
       .then((res) => setDataArea(res.meals));
     setRecipes(setFetchOnDone(false));
-  }, []);
+  };
 
   const handleChange = ({ target }) => {
     const { value } = target;
     setDatacard(value);
   };
+
+  // Lifecycle ----------------------------------------------------
+
+  useEffect(getRecipes, []);
+
+  //---------------------------------------------------------------
 
   if (loading) return (<h5>Loading...</h5>);
   return (
