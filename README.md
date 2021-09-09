@@ -7,7 +7,7 @@ FineChiefs é um Web App de Receitas de pratos e drinks feito com foco no uso mo
 ## Link para página web do Recipes App - FineChiefs
 
 <div align="center">
-  <a href="https://jonnesbezerra.github.io/RecipesApp/#/">
+  <a href="https://jonnesbezerra.github.io/RecipesApp/#/" target="_blank">
     <img width=100px src="https://cdn2.iconfinder.com/data/icons/inficons-set-5/1000/link-chain-512.png" />
   </a>
 </div>
