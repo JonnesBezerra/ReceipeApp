@@ -1,6 +1,6 @@
 # Este é o repositório do projeto Recipes App - Fine Chiefs
 
-FineChiefs é um Web App de Receitas de pratos e drinks feito com foco no uso mobile.
+FineChiefs é um Web App de Receitas de pratos e drinks feito com foco no uso mobile. São diversas receitas catalogadas onde a pessoa usuária tem vários meios de pesquisá-las.
 
 ---
 
